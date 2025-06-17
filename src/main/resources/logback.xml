@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- Создаём аппендер, который пишет логи в файл -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/myapp.log</file>  <!-- Путь к файлу логов -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Базовый корень, определяющий общий уровень логирования и используемые аппендеры -->
+    <root level="debug">
+        <appender-ref ref="FILE"/>  <!-- Все логи отправляются в файл -->
+    </root>
+</configuration>
